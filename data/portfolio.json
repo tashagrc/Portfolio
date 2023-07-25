@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "title": "ReadRacoon",
+      "year": 2023,
+      "role" : "Full Stack Web Developer",
+      "tech": "Laravel 8, MySQL",
+      "url": "https://github.com/",
+      "category": "College Assignment",
+      "description": "While Indonesia has a high literacy rate among young people, functional literacy is still lacking. ReadRacoon is an "
+    },
+    {
+        "id": 2,
+        "title": "Seekers",
+        "year": 2023,
+        "role" : "Full Stack Web Developer",
+        "tech": "Laravel 8, MySQL",
+        "url": "https://github.com/",
+        "category": "College Assignment",
+        "description": "While Indonesia has a high literacy rate among young people, functional literacy is still lacking. ReadRacoon is an "
+      },
+      {
+        "id": 3,
+        "title": "Infarm",
+        "year": 2023,
+        "role" : "Full Stack Web Developer",
+        "tech": "Laravel 8, MySQL",
+        "url": "https://github.com/",
+        "category": "College Assignment",
+        "description": "While Indonesia has a high literacy rate among young people, functional literacy is still lacking. ReadRacoon is an "
+      }
+  ]
