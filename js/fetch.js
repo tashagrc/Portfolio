@@ -97,6 +97,7 @@ jsonData = [
     }
   ];
 
+  var jsonData = "data:application/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsonData));
 
 $.getJSON(jsonData, function (data) {
     // console.log(data);
