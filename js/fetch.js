@@ -85,13 +85,13 @@ jsonData = [
     },
     {
       "id": 8,
-      "title": "BINUS Square",
-      "year": 2022,
+      "title": "Beelive",
+      "year": 2023,
       "role" : "UI/UX Designer",
       "tech": "Figma",
       "url": "https://www.figma.com/proto/FCTHTx2ODu80h1P8gPtc3p/Venn-Prototype?page-id=0%3A1&type=design&node-id=110-2374&viewport=-3202%2C871%2C0.56&scaling=scale-down&starting-point-node-id=110%3A2374",
       "category": "Competition",
-      "description": "",
+      "description": "Beelive is a BINUS Square app redesign using the design thinking methodology. Beelive helps students and faculty members of BINUS University to book and access dormitory facilities, including a digital key to enter their room.  The main feature includes reservation, booking, digital key, and cafeteria. As a UI/UX Designer in a team of 3, I designed the booking page, home page, room list, and room detail. ",
       "image": "../images/binussquare.svg",
       "c": "Prototype"
     }
