@@ -94,6 +94,18 @@ jsonData = [
       "description": "Beelive is a BINUS Square app redesign using the design thinking methodology. Beelive helps students and faculty members of BINUS University to book and access dormitory facilities, including a digital key to enter their room.  The main feature includes reservation, booking, digital key, and cafeteria. As a UI/UX Designer in a team of 3, I designed the booking page, home page, room list, and room detail. ",
       "image": "../images/binussquare.svg",
       "c": "Prototype"
+    },
+    {
+      "id": 9,
+      "title": "Tanivest",
+      "year": 2023,
+      "role" : "Mobile Developer",
+      "tech": "Flutter, Firebase",
+      "url": "https://drive.google.com/file/d/1-9TYpIYVZlfY0FiRBCJzt5ewRiQLa41w/view?usp=sharing",
+      "category": "Competition",
+      "description": "Tanivest is a crowdfunding-based application that is useful for helping farmers to get capital to continue their agricultural cycle, or for farmers who just want to start their business. As a developer in a team of two, my role involved developing the investment detail page, transaction page, and payment page.",
+      "image": "../images/tanivest.svg",
+      "c": "Mobile App"
     }
   ];
 
@@ -117,7 +129,7 @@ $.getJSON(jsonData, function (data) {
 						<span>Tech: <b>` + data.tech + `</b></span><br>
 						<span>Purpose: <b>` + data.category + `</b></span><br>
 						<br>
-						<a href="`+ detailPageUrl + `" class="btn btn-primary btn-detail">Detail</a>
+						<a href="`+ detailPageUrl + `" class="btn btn-primary btn-detail rounded">Detail</a>
 						
 					</div>
 	                
