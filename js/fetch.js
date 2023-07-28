@@ -111,7 +111,9 @@ jsonData = [
 
   var jsonData = "data:application/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsonData));
 
-$.getJSON(jsonData, function (data) {
+
+  // ketika refresh, ini jalan buat tampilin semua data
+  $.getJSON(jsonData, function (data) {
     // console.log(data);
     // masuk ke menu
     let pt = data;
@@ -140,47 +142,55 @@ $.getJSON(jsonData, function (data) {
     });
 });
 
-// $('.btn-cat').on('click', function() {
 
-//     let kategori = $(this).html();
+// buat dapatkan data perkategori
+$(document).ready(function() {
+  
+  // Get the JSON data
+  $.getJSON(jsonData, function(data) {
+      $('.categoryLink').on('click', function() {
+          const originalData = data;
+          let content = '';
+          // Get the selected value
+          const radioBtn = $(this).find('input[type="radio"]');
+          radioBtn.prop('checked', true);
 
-//     $.getJSON('../data/portfolio.json', function(data) {
-//         let pt = data;
-//         let content = '';
-//         // tampilin berdasarkan kategori
-//         $.each(pt, function(i, data) {
-//             // kalo data kategori sama dgn kategori yg diklik
-//             if( data.category == kategori.toLowerCase() || kategori == "All Projects") {
-//                 content += `
-//                 <div class="col-lg-4 col-6 mb-4" >
+          const selectedValue = radioBtn.val();
 
-// 				<div class="card mb-3" style="width: 20rem;">
-// 					<img src="`+ data.image + `" class="card-img-top" alt="...">
-// 					<div class="card-body">
-// 						<span>`+ data.year +`</span>
-// 						<h4 class="card-title">` + data.title + `</h4> 
-// 						<span>Role: <b>` + data.role + `</b></span><br>
-// 						<span>Tech: <b>` + data.tech + `</b></span><br>
-// 						<span>Category: <b>` + data.category + `</b></span><br>
-// 						<br>
-// 						<a href="`+ detailPageUrl + `" class="btn btn-primary">Detail</a>
-						
-// 					</div>
-	                
-// 	            </div>
-// 	      	</div>
-//                 `;
-//             }
-//         });
-//         // hanya tampilkan sesuai kategori
-//         $('#daftar-portfolio').html(content);
-//     });
+          $.each(originalData, function(i, data) {
+            let detailPageUrl = 'portfolio-single.html?id=' + data.id;
 
-    
-// });
+            if( data.c == selectedValue || selectedValue == "All Projects") {
+              content += `
+              <div class="col-lg-4 col-6 mb-4 shuffle-item">
+        
+              <div class="card mb-3">
+                <img src="`+ data.image + `" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <span>`+ data.year +`</span>
+                  <h4 class="card-title">` + data.title + `</h4> 
+                  <span>Role: <b>` + data.role + `</b></span><br>
+                  <span>Tech: <b>` + data.tech + `</b></span><br>
+                  <span>Purpose: <b>` + data.category + `</b></span><br>
+                  <br>
+                  <a href="`+ detailPageUrl + `" class="btn btn-primary btn-detail rounded">Detail</a>
+                  
+                </div>
+                        
+                    </div>
+                </div>
+              `;
+            }
+        });
+          
+        $('#daftar-portfolio').html(content);
+      });
+  });
+});
 
 
 
+// buat dapet data satuan dan simpan ke local storage
 // // Get the ID from the URL query parameter
 
 $(document).ready(function() {
@@ -198,19 +208,21 @@ $(document).ready(function() {
                 localStorage.setItem('itemData', JSON.stringify(item));
                 
             } else {
-                console.log('Item not found');
+                // console.log('Item not found');
             }
         });
     });
 });
 
+
+// dapatkan data dari local storage dan tampilkan detail
 $(document).ready(function() {
     // Retrieve the 'item' data from localStorage
     const itemDataString = localStorage.getItem('itemData');
     if (itemDataString) {
         const itemData = JSON.parse(itemDataString);
         // Use the 'itemData' as needed in your detail page
-        console.log(itemData);
+        // console.log(itemData);
         // Update the content of your detail page with the 'itemData'
         $('.detail-body').html(`
         <section class="page-title section pb-0">
@@ -272,11 +284,11 @@ $(document).ready(function() {
   </section>
         
         `);
-        // Clear the 'itemData' from localStorage after use (optional)
         
     } else {
-        console.log('Item data not found');
+        // console.log('Item data not found');
     }
 });
+
 
 
